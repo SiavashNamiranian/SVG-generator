@@ -131,15 +131,31 @@ inquirer
                                 }))
                     }))
         }
-    })
-inquirer
-    .prompt([{
-        {
-            type: 'input',
-            message: 'please specify the color of your square using color name or hexadecimal value',
-            name: 'fill=',
-        },
     }
-])
+    inquirer
+        .prompt([
+            {
+        
+            type: 'input',
+            message: 'please specify the three character text for your logo',
+            name: '-',
+            },
+            {
+            type: 'input',
+            message: 'please specify the three character text for your logo',
+            name: '-',
+            },
+            {
+            type: 'input',
+            message: 'please specify the three character text for your logo',
+            name: '-',
+            },
+    
+    ])
+    .then((response) => {
+    var response = JSON.stringify(response);
+    response = response.replace(/["`\]:<{}[.']/g, '');
+    fs.appendFile('./examples/logo.svg', response, (err) => err ? console.log(err) : console.log('successful'))})
 
+    )
 
