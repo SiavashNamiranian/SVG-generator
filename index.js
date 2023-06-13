@@ -8,7 +8,7 @@ inquirer
 
         {
             type: 'checkbox',
-            message: 'please choose the background shape of your logo from following selection',
+            message: 'please choose the background shape of your logo from following selection, please note that max-width is 300 and max height is 200, also if need multiple shapes start from your most backset shape, skip all text prompts, restart the prompt and add all your shapes until you are ready to have your logo text',
             name: '<',
             choices: ['Triangle', 'Circle', 'Square'],
         },
@@ -75,8 +75,9 @@ inquirer
                                         name: ' fill=',
                                     },
                                     {
-                                        type: 'input',
+                                        type: 'maxlength-inpu',
                                         message: 'please specify the logo text Three letter',
+                                        maxLength: '3',
                                         name: '>input',
                                     },
 
